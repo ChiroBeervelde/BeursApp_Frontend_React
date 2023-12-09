@@ -1,0 +1,113 @@
+[
+    {
+      "id": 1,
+      "naam": "Cola",
+      "currentPrijs": 2.5,
+      "previousPrijs": 2.25,
+      "categorie": "frisdrank",
+      "alcoholisch": false,
+      "kleur": "#000000",
+      "afbeelding": null,
+      "hotkey": "c"
+    },
+    {
+      "id": 2,
+      "naam": "Stella Artois",
+      "currentPrijs": 3.5,
+      "previousPrijs": 3.25,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#ffff00",
+      "afbeelding": null,
+      "hotkey": "a"
+    },
+    {
+      "id": 3,
+      "naam": "Duvel",
+      "currentPrijs": 4.5,
+      "previousPrijs": 4.25,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#ff0000",
+      "afbeelding": null,
+      "hotkey": "d"
+    },
+    {
+      "id": 4,
+      "naam": "Fanta",
+      "currentPrijs": 2.25,
+      "previousPrijs": 2,
+      "categorie": "frisdrank",
+      "alcoholisch": false,
+      "kleur": "#ff6600",
+      "afbeelding": null,
+      "hotkey": "f"
+    },
+    {
+      "id": 5,
+      "naam": "Jupiler",
+      "currentPrijs": 3.75,
+      "previousPrijs": 3.5,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#ffcc00",
+      "afbeelding": null,
+      "hotkey": "j"
+    },
+    {
+      "id": 6,
+      "naam": "Leffe",
+      "currentPrijs": 4.75,
+      "previousPrijs": 4.5,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#663300",
+      "afbeelding": null,
+      "hotkey": "l"
+    },
+    {
+      "id": 7,
+      "naam": "Sprite",
+      "currentPrijs": 2.25,
+      "previousPrijs": 2,
+      "categorie": "frisdrank",
+      "alcoholisch": false,
+      "kleur": "#00ff00",
+      "afbeelding": null,
+      "hotkey": "s"
+    },
+    {
+      "id": 8,
+      "naam": "Hoegaarden",
+      "currentPrijs": 4,
+      "previousPrijs": 3.75,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#ffffff",
+      "afbeelding": null,
+      "hotkey": "h"
+    },
+    {
+      "id": 9,
+      "naam": "Chaudfontaine",
+      "currentPrijs": 2.75,
+      "previousPrijs": 2.5,
+      "categorie": "water",
+      "alcoholisch": false,
+      "kleur": "#0000ff",
+      "afbeelding": null,
+      "hotkey": "c"
+    },
+    {
+      "id": 10,
+      "naam": "Orval",
+      "currentPrijs": 5,
+      "previousPrijs": 4.75,
+      "categorie": "bier",
+      "alcoholisch": true,
+      "kleur": "#ff9900",
+      "afbeelding": null,
+      "hotkey": "o"
+    }
+  ]
+  

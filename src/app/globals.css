@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.primary-button {
+  @apply rounded bg-amber-300 text-black py-2 px-4 shadow outline-none
+   hover:bg-amber-400  active:bg-amber-500;
+}
+.default-button {
+  @apply rounded bg-gray-100 py-2  px-4 text-black shadow outline-none
+   hover:bg-gray-200  active:bg-gray-300
+     dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700;
+}
+
+
+/* Header */
+.header{
+  @apply flex justify-between items-center;
+  .header-image {
+    @apply h-[100px] w-[150px];
+  }
+  .header-main {
+    @apply flex justify-between items-center;
+  }
+  .header-home-link{
+    @apply flex items-center;
+  }
+  .header-home-link p,
+  .header-dranken-link p,
+  .header-bestelling-link p {
+    @apply  mx-[5px] my-0 font-bold;
+  }
+  .header-bestelling-link span {
+    @apply mr-[5px];
+  }
+}
+
+
+/* DrankenPage */
+.dranken{
+  @apply flex;
+  .dranken-grid{
+    @apply grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 p-5;
+  }
+  .dranken-sidebar{
+    @apply w-[200px] p-5 border-t border-l border-solid;
+  }
+}
+
+/* DrankenCard */
+.drank-card {
+ @apply mb-5 block rounded-lg border-gray-200 border-2 p-5;
+ .drank-card-name{
+   @apply text-2xl font-bold;
+ }
+ .drank-card-button{
+   @apply bg-red-500 text-white rounded-lg px-3 py-2;
+ }
+} 
+
+/* BestellingSidebar */
+

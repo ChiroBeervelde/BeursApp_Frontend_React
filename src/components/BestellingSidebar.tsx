@@ -1,8 +1,9 @@
 'use client'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import BestellingItem from "../models/BestellingItem";
 import { Bars } from 'react-loader-spinner'
+import BestellingSidebarItem from "./BestellingSidebarItem";
 
 
 function BestellingSidebar() {
@@ -34,8 +35,8 @@ function BestellingSidebar() {
           <div className="bestelling-sidebar-body">
             Aantal items: {bestellingItems.reduce((a: number, c: BestellingItem) => a + c.aantal, 0)}
             {bestellingItems.map((item: BestellingItem) => (
-              <div key={item.id} className="bestelling-sidebar-item">
-                {item.id}
+              <div key={item.id}>
+                <BestellingSidebarItem {...item} />      
               </div>
             ))}
           </div>

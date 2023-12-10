@@ -23,6 +23,7 @@ const bestellingSlice = createSlice({
       const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === item.id);
       if (existItem) {
         existItem.aantal++;
+        existItem.totaalPrijs = existItem.prijsPerArtikel * existItem.aantal;
     } else {
       const newItem: BestellingItem = {
         id: item.id,
@@ -36,11 +37,35 @@ const bestellingSlice = createSlice({
       state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
-    removeFromBestelling: (state, action) => {
+    increaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
+      const itemId : number= action.payload;
+      const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === itemId);
+      if (existItem) {
+        existItem.aantal++;
+        existItem.totaalPrijs = existItem.prijsPerArtikel * existItem.aantal;
+      } 
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      localStorage.setItem('bestelling', JSON.stringify(state));
+    },
+    removeFromBestelling: (state, action: PayloadAction<Drank>) => {
       const item : Drank= action.payload;
       const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === item.id);
       if (existItem) {
-        existItem.aantal++;
+        existItem.aantal--;
+        existItem.totaalPrijs = existItem.prijsPerArtikel * existItem.aantal;
+        if (existItem.aantal === 0) {
+          state.bestellingItems = state.bestellingItems.filter((bestellingItem: BestellingItem) => bestellingItem.id !== existItem.id);
+        }
+      } 
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      localStorage.setItem('bestelling', JSON.stringify(state));
+    },
+    decreaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
+      const itemId : number= action.payload;
+      const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === itemId);
+      if (existItem) {
+        existItem.aantal--;
+        existItem.totaalPrijs = existItem.prijsPerArtikel * existItem.aantal;
         if (existItem.aantal === 0) {
           state.bestellingItems = state.bestellingItems.filter((bestellingItem: BestellingItem) => bestellingItem.id !== existItem.id);
         }
@@ -54,5 +79,5 @@ const bestellingSlice = createSlice({
   },
 });
 
-export const { addToBestelling, removeFromBestelling, hideLoading } = bestellingSlice.actions;
+export const { addToBestelling, increaseQuantityBestellingItem, removeFromBestelling, decreaseQuantityBestellingItem, hideLoading } = bestellingSlice.actions;
 export default bestellingSlice.reducer;

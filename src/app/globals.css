@@ -67,7 +67,7 @@ body {
     @apply grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 p-5;
   }
   .dranken-sidebar{
-    @apply w-[200px] p-5 border-t border-l border-solid;
+    @apply w-[300px] p-5 border-t border-l border-solid;
   }
 }
 
@@ -84,3 +84,36 @@ body {
 
 /* BestellingSidebar */
 
+/* BestellingSidebarItem */
+.bestelling-sidebar-item {
+  @apply flex flex-col justify-between items-start border mb-2.5 p-2.5 border-solid border-[#ddd];
+  /* Align items to the left */
+}
+.bestelling-sidebar-item-name {
+  @apply font-[bold];
+}
+.bestelling-sidebar-item-aantal {
+  @apply flex justify-between w-full items-center;
+  /* Take full width */
+}
+.bestelling-sidebar-item-subtract-button,
+.bestelling-sidebar-item-add-button {
+  @apply cursor-pointer text-white rounded mr-[5px] px-2.5 py-[5px] border-[none];
+}
+.bestelling-sidebar-item-subtract-button {
+  @apply bg-[red];
+}
+.bestelling-sidebar-item-add-button {
+  @apply bg-[green];
+}
+.bestelling-sidebar-item-prijs {
+  @apply flex justify-between items-end w-full mt-2.5;
+  /* Align items to the right */
+  /* Take full width */
+}
+.bestelling-sidebar-item-prijs-label {
+  @apply mr-[5px];
+}
+.bestelling-sidebar-item-prijs-total {
+  @apply font-[bold];
+}

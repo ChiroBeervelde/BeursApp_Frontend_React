@@ -13,14 +13,12 @@ function DrankCard({ drank }: DrankCardProps) {
   const dispatch = useDispatch()
 
   const addToBestellingHandler = () => {
-    console.log(drank);
     dispatch(addToBestelling(drank))
   }
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === drank.hotkey) {
-        console.log(drank);
         dispatch(addToBestelling(drank))
       }
     }
@@ -29,12 +27,18 @@ function DrankCard({ drank }: DrankCardProps) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [drank, dispatch]);  
+  const divStyle = {
+    color: 'blue',
+    height: '25px', // You can use color names, hex codes, rgb values, etc.
+  };
  
   return (
     <div className='drank-card'>
-      <div className='drank-card-header'>
+      <div color='blue'>
+      <div className='drank-card-header bg-red-500'>
         <h2 className='drank-card-name'>{drank.naam}</h2>
+      </div>
       </div>
       <Image
         src={drank.afbeelding}
@@ -42,7 +46,7 @@ function DrankCard({ drank }: DrankCardProps) {
         width={200}
         height={200} 
       />
-      <p className="text-gray-700 mb-1">
+      <p className="text-red-500 tekst-9xl font-bold">
         <span className="font-semibold">Current Price:</span> {drank.currentPrijs}
       </p>
       <p className="text-gray-700 mb-2">

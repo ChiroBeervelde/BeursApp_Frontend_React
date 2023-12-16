@@ -75,10 +75,10 @@ body {
 .drank-card {
  @apply mb-5 block rounded-lg border-gray-200 border-2 p-5;
  .drank-card-name{
-   @apply text-2xl font-bold;
+   @apply text-3xl font-bold;
  }
  .drank-card-button{
-   @apply bg-red-500 text-white rounded-lg px-3 py-2;
+   @apply bg-amber-300 rounded-lg px-3 py-2;
  }
 } 
 

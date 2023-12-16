@@ -3,6 +3,7 @@ import Drank from "@/src/models/Drank";
 import BestellingItem from "@/src/models/BestellingItem";
 
 interface BestellingState {
+  [x: string]: any;
   loading: boolean;
   bestellingItems: BestellingItem[];
   totalPrice: number;
@@ -34,7 +35,7 @@ const bestellingSlice = createSlice({
       };
       state.bestellingItems.push(newItem);
       }
-      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
     increaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
@@ -44,7 +45,7 @@ const bestellingSlice = createSlice({
         existItem.aantal++;
         existItem.totaalPrijs = existItem.prijsPerArtikel * existItem.aantal;
       } 
-      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
     removeFromBestelling: (state, action: PayloadAction<Drank>) => {
@@ -57,7 +58,7 @@ const bestellingSlice = createSlice({
           state.bestellingItems = state.bestellingItems.filter((bestellingItem: BestellingItem) => bestellingItem.id !== existItem.id);
         }
       } 
-      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
     decreaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
@@ -70,7 +71,7 @@ const bestellingSlice = createSlice({
           state.bestellingItems = state.bestellingItems.filter((bestellingItem: BestellingItem) => bestellingItem.id !== existItem.id);
         }
       } 
-      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs * item.aantal, 0)
+      state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
     hideLoading: (state) => {

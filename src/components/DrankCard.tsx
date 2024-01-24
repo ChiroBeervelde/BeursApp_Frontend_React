@@ -47,10 +47,10 @@ function DrankCard({ drank }: DrankCardProps) {
         height={200} 
       />
       <p className="text-red-500 tekst-9xl font-bold">
-        <span className="font-semibold">Current Price:</span> {drank.currentPrijs}
+        <span className="font-semibold">Current Price:</span> {drank.huidigePrijs}
       </p>
       <p className="text-gray-700 mb-2">
-        <span className="font-semibold">Previous Price:</span> {drank.previousPrijs}
+        <span className="font-semibold">Previous Price:</span> {drank.vorigePrijs}
       </p>
       <p className="text-sm mb-1">
         {drank.alcoholisch ? 'Alcoholic' : 'Non-alcoholic'}

@@ -29,9 +29,9 @@ const bestellingSlice = createSlice({
       const newItem: BestellingItem = {
         id: item.id,
         naam: item.naam,
-        prijsPerArtikel: item.currentPrijs,
+        prijsPerArtikel: item.huidigePrijs,
         aantal: 1,
-        totaalPrijs: item.currentPrijs,
+        totaalPrijs: item.huidigePrijs,
       };
       state.bestellingItems.push(newItem);
       }

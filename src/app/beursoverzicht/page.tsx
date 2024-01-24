@@ -46,7 +46,7 @@ export default function BeursOverichtPage() {
     datasets: [
       {
         label: 'Dataset 1',
-        data: drinks.map((drank:Drank) => drank.currentPrijs),
+        data: drinks.map((drank:Drank) => drank.huidigePrijs),
         backgroundColor: drinks.map((drank:Drank) => drank.kleur),
       }
     ],

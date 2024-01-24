@@ -1,8 +1,8 @@
 export default interface Drank {
     id: number;
     naam: string;
-    currentPrijs: number;
-    previousPrijs: number;
+    huidigePrijs: number;
+    vorigePrijs: number;
     categorie: string;
     alcoholisch: boolean;
     kleur: string;

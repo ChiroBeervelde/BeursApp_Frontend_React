@@ -4,16 +4,17 @@ import BestellingItem from "@/models/BestellingItem";
 
 
 interface BestellingState {
-  [x: string]: any;
-  loading: boolean;
-  bestellingItems: BestellingItem[];
-  totalPrice: number;
+	[x: string]: any;
+
+	loading: boolean;
+	bestellingItems: BestellingItem[];
+	totalPrice: number;
 }
 
 const initialState: BestellingState = {
-  loading: true,
-  bestellingItems: [],
-  totalPrice: 0,
+	loading: true,
+	bestellingItems: [],
+	totalPrice: 0,
 };
 
 const bestellingSlice = createSlice({

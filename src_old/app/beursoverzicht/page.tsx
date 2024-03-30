@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { dranken } from '@/utils/dranken';
+import{dranken} from '@/src/utils/dranken';
 import { Bar } from 'react-chartjs-2';
-import Drank from '@/models/Drank';
+import Drank from '@/src/models/Drank';
 import {
   Chart as ChartJS,
   CategoryScale,

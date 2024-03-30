@@ -19,21 +19,21 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-          to bottom,
-          transparent,
-          rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 .primary-button {
   @apply rounded bg-amber-300 text-black py-2 px-4 shadow outline-none
-  hover:bg-amber-400  active:bg-amber-500;
+   hover:bg-amber-400  active:bg-amber-500;
 }
 .default-button {
   @apply rounded bg-gray-100 py-2  px-4 text-black shadow outline-none
-  hover:bg-gray-200  active:bg-gray-300
-  dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700;
+   hover:bg-gray-200  active:bg-gray-300
+     dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700;
 }
 
 
@@ -72,15 +72,15 @@ body {
 }
 
 /* DrankenCard */
-/*DrankenCard.drank-card {*/
-/*  @apply mb-5 block rounded-lg border-gray-200 border-2 p-5;*/
-/*  .drank-card-name{*/
-/*    @apply text-3xl font-bold;*/
-/*  }*/
-/*  .drank-card-button{*/
-/*    @apply bg-amber-300 rounded-lg px-3 py-2;*/
-/*  }*/
-/*}*/
+DrankenCard.drank-card {
+ @apply mb-5 block rounded-lg border-gray-200 border-2 p-5;
+ .drank-card-name{
+   @apply text-3xl font-bold;
+ }
+ .drank-card-button{
+   @apply bg-amber-300 rounded-lg px-3 py-2;
+ }
+}
 
 .drank-card {
   position: relative;

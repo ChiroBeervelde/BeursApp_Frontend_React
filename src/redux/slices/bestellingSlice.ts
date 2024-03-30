@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import Drank from "@/src/models/Drank";
-import BestellingItem from "@/src/models/BestellingItem";
+import Drank from "@/models/Drank";
+import BestellingItem from "@/models/BestellingItem";
+
 
 interface BestellingState {
   [x: string]: any;
@@ -38,6 +39,7 @@ const bestellingSlice = createSlice({
       state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
+
     increaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
       const itemId : number= action.payload;
       const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === itemId);
@@ -48,6 +50,7 @@ const bestellingSlice = createSlice({
       state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
+
     removeFromBestelling: (state, action: PayloadAction<Drank>) => {
       const item : Drank= action.payload;
       const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === item.id);
@@ -61,6 +64,7 @@ const bestellingSlice = createSlice({
       state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
+
     decreaseQuantityBestellingItem: (state, action: PayloadAction<number>) => {
       const itemId : number= action.payload;
       const existItem = state.bestellingItems.find((bestellingItem: BestellingItem) => bestellingItem.id === itemId);
@@ -74,11 +78,25 @@ const bestellingSlice = createSlice({
       state.totalPrice = state.bestellingItems.reduce((acc, item: BestellingItem) => acc + item.totaalPrijs, 0)
       localStorage.setItem('bestelling', JSON.stringify(state));
     },
+
+    clearBestelling: (state) => {
+      console.log("here clear")
+      state.bestellingItems = [];
+      state.totalPrice= 0;
+    },
+
     hideLoading: (state) => {
       state.loading = false;
     },
   },
 });
 
-export const { addToBestelling, increaseQuantityBestellingItem, removeFromBestelling, decreaseQuantityBestellingItem, hideLoading } = bestellingSlice.actions;
+export const {
+  addToBestelling,
+  increaseQuantityBestellingItem,
+  removeFromBestelling,
+  decreaseQuantityBestellingItem,
+  clearBestelling,
+  hideLoading
+} = bestellingSlice.actions;
 export default bestellingSlice.reducer;

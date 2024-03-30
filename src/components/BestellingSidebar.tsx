@@ -2,7 +2,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import BestellingItem from "../models/BestellingItem";
-import { Bars } from 'react-loader-spinner'
 import BestellingSidebarItem from "./BestellingSidebarItem";
 
 
@@ -12,15 +11,7 @@ function BestellingSidebar() {
   return (
     <div className='bestelling-sidebar'>
       {loading ? (
-        <Bars
-        height="20"
-        width="20"
-        color="#4fa94d"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+          <div>Loading...</div>
       ) : bestellingItems.length === 0 ? (
         <>
           <div className="bestelling-sidebar-header">
@@ -32,7 +23,7 @@ function BestellingSidebar() {
           <div className="bestelling-sidebar-header">
             Bestelling
           </div>
-          <div className="bestelling-sidebar-body">
+          <div className="bestelling-sidebar-body" style={{maxHeight: '500px', overflowY: 'auto'}}>
             Aantal items: {bestellingItems.reduce((a: number, c: BestellingItem) => a + c.aantal, 0)}
             {bestellingItems.map((item: BestellingItem) => (
               <div key={item.id}>

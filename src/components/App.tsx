@@ -11,10 +11,11 @@ interface AppProps {
 
 function App({ children }: AppProps) {
 
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(hideLoading());
-    }, [dispatch]);
+    // const dispatch = useDispatch();
+    //
+    // useEffect(() => {
+    //     dispatch(hideLoading());
+    // }, [dispatch]);
 
     return (
         <div className="app">

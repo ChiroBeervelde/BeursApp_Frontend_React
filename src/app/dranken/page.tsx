@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import {dranken as mockDranken} from '@/utils/dranken';
 import Drank from '@/models/Drank';

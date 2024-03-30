@@ -25,7 +25,7 @@ export const dranken = {
         {
             id: 3,
             naam: "Duvel",
-            huidigePrijs: 2,
+            huidigePrijs: 4.5,
             vorigePrijs: 4.25,
             categorie: "bier",
             alcoholisch: true,

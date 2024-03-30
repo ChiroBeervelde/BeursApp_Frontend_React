@@ -1,5 +1,5 @@
 {
-  "name": "beurs-app-frontend-react",
+  "name": "beursapp-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.0.1",
+    "@reduxjs/toolkit": "^2.2.1",
     "axios": "^1.6.8",
-    "chart.js": "^4.4.1",
-    "next": "13.5.4",
+    "next": "14.1.0",
+    "preline": "^2.0.3",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
@@ -22,11 +22,11 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10",
+    "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "13.5.4",
+    "eslint-config-next": "14.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
 }

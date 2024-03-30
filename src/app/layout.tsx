@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import PrelineScript from "../components/PrelineScript";
+import PrelineScript from "@/components/PrelineScript";
 import Header from "@/components/Header/header";
 import StoreProvider from "@/redux/StoreProvider";
 import App from "@/app/App";

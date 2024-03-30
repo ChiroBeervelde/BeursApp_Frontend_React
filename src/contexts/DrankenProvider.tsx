@@ -1,4 +1,3 @@
-// 			console.log('initialLoad')
 import {
 	createContext,
 	useState,

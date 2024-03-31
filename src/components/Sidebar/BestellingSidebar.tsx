@@ -12,11 +12,15 @@ import { clearBestelling } from "@/redux/slices/bestellingSlice";
 function BestellingSidebar() {
   const {loading, bestellingItems, totalPrice} = useSelector((state: RootState) => state.bestelling);
   const { createBestelling } = useBestellingen();
+  const dispatch = useDispatch()
 
   useEffect(() => {
     async function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Enter') {
         await createBestelling()
+      }
+      if (event.key === 'Escape') {
+        dispatch(clearBestelling())
       }
     }
 

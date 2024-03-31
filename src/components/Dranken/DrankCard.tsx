@@ -35,10 +35,10 @@ function DrankCard({drank}: DrankCardProps) {
 				<div className={`drank-card-header`}>
 					<h2 className='drank-card-name'>{drank.naam} - {drank.hotkey}</h2>
 				</div>
-				<img className='drank-card-image' src={drank.afbeelding} alt={drank.naam}/>
 				<p className={`${drank.vorigePrijs > drank.huidigePrijs ? "text-green-500" : "text-red-500"}`}>
 					<span className="font-semibold tekst-9xl">Current Price:</span> {drank.huidigePrijs}
 				</p>
+				<img className='drank-card-image' src={drank.afbeelding} alt={drank.naam}/>
 			</div>
 			<button className='drank-card-button' onClick={addToBestellingHandler}>Add to cart</button>
 		</div>

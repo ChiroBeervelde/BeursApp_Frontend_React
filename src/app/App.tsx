@@ -18,12 +18,16 @@ function App({children}: AppProps) {
 		dispatch(hideLoading());
 	}, [dispatch]);
 
+	const shouldHideHeader = () => {
+		return location.pathname === '/beursoverzicht';
+	};
+
 	return (
 		<DrankenProvider>
 			<BestellingProvider>
 			<div className="app">
 				<div>
-					<Header/>
+					{!shouldHideHeader() && <Header />}
 					<main>{children}</main>
 				</div>
 			</div>

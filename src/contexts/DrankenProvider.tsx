@@ -52,7 +52,8 @@ export const DrankenProvider = ({ children }: { children: ReactNode }) => {
 		dranken,
 		error,
 		loading,
-	}), [dranken, error, loading]);
+		refreshDranken
+	}), [dranken, error, loading, refreshDranken]);
 
 	return (
 		<DrankenContext.Provider value={value}>

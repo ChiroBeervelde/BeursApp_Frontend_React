@@ -17,6 +17,9 @@ function Header() {
 					<Link href="/beursoverzicht" className="header-dranken-link">
 						<p>Beursoverzicht</p>
 					</Link>
+					<Link href="/beurscards" className="header-dranken-link">
+						<p>Beurscards</p>
+					</Link>
 				</div>
 			</nav>
 		</header>

@@ -4,6 +4,8 @@ import Bestelling from "@/models/Bestelling";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/redux/store";
 import {clearBestelling} from "@/redux/slices/bestellingSlice";
+import { useDranken } from "@/contexts/DrankenProvider";
+
 
 interface BestellingContextType {
 	bestellingen: Bestelling[];
@@ -22,6 +24,8 @@ export const BestellingProvider = ({children}: { children: ReactNode }) => {
 	const [bestellingen, setBestellingen] = useState<Bestelling[]>([]);
 	const {bestellingItems} = useSelector((state: RootState) => state.bestelling);
 	const dispatch = useDispatch()
+	const { refreshDranken } = useDranken();
+
 
 
 	// const refreshDranken = useCallback(async () => {
@@ -60,6 +64,7 @@ export const BestellingProvider = ({children}: { children: ReactNode }) => {
 				console.log(data)
 
 				dispatch(clearBestelling())
+				refreshDranken();
 				return data;
 			}
 		} catch (error) {

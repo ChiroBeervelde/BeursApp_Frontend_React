@@ -56,3 +56,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   }, []); // Empty dependency array means it runs only once after the component mounts
 ```
 
+https://casesandberg.github.io/react-color/
